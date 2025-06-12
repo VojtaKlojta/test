@@ -1,0 +1,484 @@
+/* Basic reset and full height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Navigation Menu Styles */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.nav-menu > li {
+    position: relative;
+}
+
+.nav-menu > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu > li > a:hover {
+    color: #0066cc;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: '▼';
+    font-size: 10px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 101;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f5f5f5;
+    color: #0066cc;
+}
+
+/* Body background */
+body {
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Background image containers */
+.background-left, .background-right {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1; /* Behind all content */
+}
+
+.background-left {
+    left: 0;
+    background: url('../images/blue.png') no-repeat;
+    background-size: cover;
+}
+
+.background-right {
+    right: 0;
+    background: url('../images/white.png') no-repeat;
+    background-size: cover;
+}
+
+/* Container for left/right text boxes and center image */
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 50px 5% 0; /* Added top padding to account for the navigation menu */
+    box-sizing: border-box;
+    position: relative; /* Make it a positioning context for absolute elements */
+}
+
+/* Left text box */
+.left-box {
+    position: absolute;
+    top: 150px;
+    left: 5%;
+    width: 200px;
+    color: #ffffff;
+    text-align: center;
+    z-index: 10; /* Ensure it's on top of the image */
+}
+
+/* Right text box */
+.right-box {
+    position: absolute;
+    top: 150px;
+    right: 5%;
+    width: 200px;
+    color: #000000;
+    text-align: left; /* Changed from right to left */
+    z-index: 10; /* Ensure it's on top of the image */
+}
+
+.right-box .offset-mail {
+    margin-left: 0; /* Removed margin since text is now left-aligned */
+}
+
+/* Contact styling */
+.right-box h1 {
+    margin-bottom: 10px;
+}
+
+.contact-list {
+    margin-top: 0;
+}
+
+.contact-item {
+    margin-bottom: 5px;
+    display: flex;
+}
+
+.contact-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+}
+
+.contact-item a span {
+    font-weight: bold;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* Center image container */
+.center-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: 80px;
+    position: relative;
+    z-index: 1; /* Lower z-index than text boxes */
+}
+.center-image img {
+    width: 800px;
+    min-width: 800px;
+}
+
+/* Reservation overlay box near the bottom of the page */
+.reservation-overlay {
+    position: absolute;
+    top: 800px; /* Adjust to move higher or lower */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    height: 1000px;
+    width: 55%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 4px;
+    z-index: 20; /* Higher z-index to be in front of the image */
+}
+
+/* Desktop/Large Tablet (1350px and below) */
+@media (max-width: 1350px) {
+    /* Make the content-wrapper the positioning context */
+    .content-wrapper {
+        position: relative;
+    }
+
+    /* Remove the top offsets and reposition absolutely over the image */
+    .left-box {
+        position: absolute;
+        top: 130px;     /* Adjust as needed */
+        left: 50px;     /* Adjust as needed */
+        width: 350px;    /* Optionally adjust the width */
+        z-index: 10;    /* Ensure it's on top of the image */
+    }
+
+    .right-box {
+        position: absolute;
+        top: 130px;     /* Adjust as needed */
+        right: 50px;    /* Adjust as needed */
+        width: auto;    /* Optionally adjust the width */
+        z-index: 10;    /* Ensure it's on top of the image */
+        text-align: left; /* Changed from right to left */
+    }
+    
+    /* Contact styling for desktop/large tablet */
+    .right-box h1 {
+        margin-bottom: 10px;
+    }
+    
+    .contact-item {
+        margin-bottom: 5px;
+    }
+
+    .center-image img {
+        width: 700px;
+        min-width: 700px;
+    }
+
+    .reservation-overlay {
+        position: absolute;
+        top: 800px; /* Adjust to move higher or lower */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        height: 1000px;
+        width: 85%;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        border-radius: 4px;
+        z-index: 20; /* Higher z-index to be in front of the image */
+    }
+}
+
+/* Tablet (900px and below) */
+@media (max-width: 900px) {
+    /* Navigation menu for tablet */
+    .nav-menu {
+        flex-wrap: wrap;
+    }
+    
+    .nav-menu > li > a {
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+    
+    /* Make the content-wrapper the positioning context */
+    .content-wrapper {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px; /* Increased padding for the navigation menu */
+    }
+
+    /* Remove the top offsets and reposition absolutely over the image */
+    .left-box {
+        position: absolute;
+        top: 20px;     /* Adjust as needed */
+        left: 20px;     /* Adjust as needed */
+        width: 200px;    /* Optionally adjust the width */
+        z-index: 10;    /* Ensure it's on top of the image */
+        font-size: 0.8em;
+        text-align: left;
+    }
+
+    .right-box {
+        position: absolute;
+        top: 20px;     /* Adjust as needed */
+        right: 20px;
+        width: 200px;    /* Optionally adjust the width */
+        z-index: 10;    /* Ensure it's on top of the image */
+        font-size: 0.8em;
+        text-align: left; /* Changed from right to left */
+    }
+    
+    /* Contact styling for tablet */
+    .right-box h1 {
+        margin-bottom: 10px;
+    }
+    
+    .contact-item {
+        margin-bottom: 5px;
+    }
+
+    .center-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+        margin-top: 200px;
+    }
+
+    .center-image img {
+        width: 600px;
+        min-width: 600px;
+    }
+
+    .reservation-overlay {
+        position: absolute;
+        top: 650px; /* Adjust to move higher or lower */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        height: 1000px;
+        width: 90%;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        border-radius: 4px;
+        z-index: 20; /* Higher z-index to be in front of the image */
+    }
+
+    .right-box .offset-mail {
+        margin-left: 0;
+    }      
+}
+
+/* Mobile (600px and below) */
+@media (max-width: 600px) {
+    /* Navigation menu for mobile */
+    .nav-container {
+        padding: 0 10px;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-menu > li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-menu > li > a {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-menu li a {
+        padding: 8px;
+        text-align: center;
+    }
+    
+    /* Keep background division vertical for all screen sizes */
+    .background-left, .background-right {
+        width: 50%;
+        height: 100%;
+    }
+    
+    .background-left {
+        top: 0;
+        left: 0;
+    }
+    
+    .background-right {
+        top: 0;
+        right: 0;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        padding: 70px 10px 10px; /* Increased top padding for the navigation menu */
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .left-box {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        z-index: 10;
+        font-size: 0.8em;
+    }
+
+    .right-box {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        width: 45%;
+        text-align: left; /* Changed from right to left */
+        z-index: 10;
+        font-size: 0.8em;
+    }
+    
+    /* Contact styling for mobile */
+    .right-box h1 {
+        margin-bottom: 5px;
+    }
+    
+    .contact-item {
+        margin-bottom: 3px;
+    }
+
+    .center-image {
+        margin-top: 150px; /* Push down the image to make room for text boxes */
+        width: 100%;
+        z-index: 1;
+    }
+
+    .center-image img {
+        width: 100%;
+        min-width: auto;
+        max-width: 400px;
+    }
+
+    .reservation-overlay {
+        position: relative;
+        top: 40px;
+        width: 95%;
+        height: 1000px; /* Match the height from PC view */
+        margin: 0 auto;
+        z-index: 20; /* Higher z-index to be in front of the image */
+    }
+
+    .right-box .offset-mail {
+        margin-left: 0;
+    }
+}

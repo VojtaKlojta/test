@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O mně - Vojta Kloud</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      /* Additional styles specific to the About page */
+      .about-content {
+        max-width: 800px;
+        margin: 120px auto 50px;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 10;
+      }
+      
+      .about-content h1 {
+        color: #0066cc;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      
+      .about-content p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+      
+      .about-image {
+        float: right;
+        margin: 0 0 20px 20px;
+        border-radius: 8px;
+        max-width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      
+      @media (max-width: 900px) {
+        .about-content {
+          margin-top: 100px;
+          padding: 20px;
+        }
+        
+        .about-image {
+          float: none;
+          display: block;
+          margin: 0 auto 20px;
+          max-width: 250px;
+        }
+      }
+      
+      @media (max-width: 600px) {
+        .about-content {
+          margin-top: 90px;
+          padding: 15px;
+        }
+        
+        .about-image {
+          max-width: 200px;
+        }
+      }
+    </style>
+  </head>
+<body>
+  <!-- Background image containers -->
+  <div class="background-left"></div>
+  <div class="background-right"></div>
+  
+  <!-- Navigation Menu -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <ul class="nav-menu">
+        <li><a href="index.html">Domů</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Kurzy VŠ</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">VŠE</a></li>
+            <li><a href="kurzy/czu/index.html">ČZU</a></li>
+            <li><a href="#">SŠ</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Přijímačky</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">ČZU</a></li>
+            <li><a href="#">VŠE</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Další služby</a></li>
+        <li><a href="o-mne.html">O mně</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- About content -->
+  <div class="about-content">
+    <img src="images/vojtech.png" alt="Vojta Kloud" class="about-image">
+    <h1>O mně</h1>
+    <p>
+      Jmenuji se Vojta Kloud a jsem zkušený lektor matematiky. Specializuji se na přípravu studentů na přijímací zkoušky na vysoké školy, zejména na VŠE, ČZU a další instituce.
+    </p>
+    <p>
+      Mám bohaté zkušenosti s výukou matematiky a přípravou studentů na různé typy zkoušek, včetně zahraničních testů jako MAT, PAT, NSAA, ESAT a TSA.
+    </p>
+    <p>
+      Mým cílem je pomoci studentům nejen zvládnout matematiku pro účely zkoušek, ale také jim pomoci pochopit matematické koncepty a principy, které jim budou užitečné v jejich budoucím studiu a kariéře.
+    </p>
+    <p>
+      Výuku přizpůsobuji individuálním potřebám každého studenta a používám moderní metody, které pomáhají studentům lépe pochopit a zapamatovat si matematické koncepty.
+    </p>
+    <p>
+      Pokud máte zájem o mé služby nebo máte jakékoliv dotazy, neváhejte mě kontaktovat prostřednictvím <a href="index.html">hlavní stránky</a>.
+    </p>
+  </div>
+</body>
+</html>

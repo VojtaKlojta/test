@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurzy ČZU - Vojta Kloud</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="../../favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+    <link rel="manifest" href="../../site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      /* Additional styles specific to the courses page */
+      .courses-content {
+        max-width: 1200px;
+        margin: 120px auto 50px;
+        padding: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 10;
+      }
+      
+      .courses-content h1 {
+        color: #0066cc;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+      
+      .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+      }
+      
+      .course-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      
+      .course-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      
+      .course-image {
+        width: 100%;
+        height: 180px;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      
+      .course-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .course-details {
+        padding: 20px;
+      }
+      
+      .course-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      
+      .course-description {
+        color: #666;
+        margin-bottom: 15px;
+        line-height: 1.5;
+      }
+      
+      .course-price {
+        font-weight: 700;
+        color: #0066cc;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+      
+      .course-button {
+        display: inline-block;
+        background-color: #0066cc;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+      
+      .course-button:hover {
+        background-color: #0055aa;
+      }
+      
+      @media (max-width: 900px) {
+        .courses-content {
+          margin-top: 100px;
+          padding: 20px;
+        }
+        
+        .courses-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 20px;
+        }
+      }
+      
+      @media (max-width: 600px) {
+        .courses-content {
+          margin-top: 90px;
+          padding: 15px;
+        }
+        
+        .courses-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+<body>
+  <!-- Background image containers -->
+  <div class="background-left"></div>
+  <div class="background-right"></div>
+  
+  <!-- Navigation Menu -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <ul class="nav-menu">
+        <li><a href="../../index.html">Domů</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Kurzy VŠ</a>
+          <ul class="dropdown-menu">
+            <li><a href="../vse/index.html">VŠE</a></li>
+            <li><a href="../czu/index.html">ČZU</a></li>
+            <li><a href="../ss/index.html">SŠ</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Přijímačky</a>
+          <ul class="dropdown-menu">
+            <li><a href="../../prijimacky/czu/index.html">ČZU</a></li>
+            <li><a href="../../prijimacky/vse/index.html">VŠE</a></li>
+          </ul>
+        </li>
+        <li><a href="../../dalsi-sluzby.html">Další služby</a></li>
+        <li><a href="../../o-mne.html">O mně</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Courses content -->
+  <div class="courses-content">
+    <h1>Kurzy ČZU</h1>
+    <p>
+      Vítejte v sekci kurzů pro Českou zemědělskou univerzitu. Zde najdete video kurzy, které vám pomohou zvládnout matematické předměty na ČZU.
+    </p>
+    
+    <div class="courses-grid">
+      <!-- Course 1 -->
+      <div class="course-card">
+        <div class="course-image">
+          <img src="../../images/blue.png" alt="Matematika PAA">
+        </div>
+        <div class="course-details">
+          <h2 class="course-title">Matematika PAA</h2>
+          <p class="course-description">
+            Kompletní video kurz pokrývající látku předmětu Matematika PAA na ČZU. Kurz obsahuje vysvětlení teorie, řešené příklady a cvičení.
+          </p>
+          <div class="course-price">1 490 Kč</div>
+          <a href="#" class="course-button">Koupit kurz</a>
+        </div>
+      </div>
+      
+      <!-- Course 2 -->
+      <div class="course-card">
+        <div class="course-image">
+          <img src="../../images/blue.png" alt="EMM">
+        </div>
+        <div class="course-details">
+          <h2 class="course-title">EMM</h2>
+          <p class="course-description">
+            Video kurz zaměřený na předmět Ekonomicko-matematické metody (EMM) na ČZU. Kurz zahrnuje všechna důležitá témata a praktické příklady.
+          </p>
+          <div class="course-price">1 490 Kč</div>
+          <a href="#" class="course-button">Koupit kurz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
